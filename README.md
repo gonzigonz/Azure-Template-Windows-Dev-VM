@@ -2,7 +2,7 @@
 An Azure ARM template to provision a quick Windows Visual Studio environment with dev tools
 
 # Running from local environment
-## Setup
+### Setup
 1. Ensure you have latest Azure PowerShell
     - See docs for Windows, macOS and Linux instructions:  
     https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps?view=azurermps-5.5.0 
@@ -11,12 +11,14 @@ An Azure ARM template to provision a quick Windows Visual Studio environment wit
     - Copy the `settings.sample.xml` to a new file named `settings.xml`.
     - Update the new `settings.xml` file with your settings.  
     **IMPORTANT! - The Destroy Script will DELETE ALL ITEMS from the `ResouceGroupName` defined in this settings file.**
-3. Ensure AzureRM is signed into Azure
-    - Start PowerShell terminal (On macOS type `pwsh`).
-    - Run: `Login-AzureRMAccount`
 
-## Deploy template
-To deploy the ARM template into the set **_resouce group_** run: `./create.ps1`
+### Sign into Azure
+Before running any script ensure AzureRm has been signed into Azure:
+- Start PowerShell terminal (On macOS type `pwsh`).
+- Run: `Login-AzureRMAccount`
 
-## Destory template
-To clean up and delete all items for the set **_resouce group_** run: `./destroy.ps1`
+### Deploy template
+To deploy the ARM template into the set **_resouce group_** run: `./scripts/create.ps1`
+
+### Destory template
+To clean up and delete all items for the set **_resouce group_** run: `./scripts/destroy.ps1`
